@@ -75,7 +75,7 @@ function makeShading(light_position) { // called in script.js
 
       return {
         css_var: `--brightness-${key}`, // name of css variable
-        brightness: 1 - darkness, // brightness from 0-1
+        brightness: Math.max(0.2, 1 - darkness), // brightness from 0-1, nut below 0.2
       };
     })
     .forEach(({ css_var, brightness }) =>
