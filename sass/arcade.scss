@@ -1,0 +1,143 @@
+@use "sass:math" as math;
+
+.arcade-machine {
+  > div {
+    margin: 0;
+    padding: 0;
+  }
+  .face-a {
+    width: 100px;
+    height: 100px;
+    transform: translateZ(100px);
+  }
+  .face-b {
+    width: 100px;
+    height: 100px;
+    transform: translateZ(50px) translateX(50px) rotateY(90deg);
+    background-color: darken(rgb(231, 55, 55), 10%);
+  }
+  .face-b-mirrored {
+    width: 100px;
+    height: 100px;
+    transform: translateZ(50px) translateX(calc(50px - 100px)) rotateY(-90deg);
+  }
+  .face-c {
+    width: 100px;
+    height: 50px;
+    transform: translateZ(75px) translatey(-25px) rotatex(90deg);
+  }
+  .face-d {
+    $w: 15px;
+    width: $w;
+    height: 200px;
+    background-size: cover;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+    background-color: darken(rgb(231, 55, 55), 10%);
+    transform: translateZ(calc(#{$w} / 2 + 35px)) translatey(-200px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
+  }
+  .face-e {
+    $w: 35px;
+    width: $w;
+    height: 200px;
+    background-color: darken(rgb(231, 55, 55), 10%);
+    transform: translateZ(calc(#{$w} / 2)) translatey(-200px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
+  }
+  .face-f {
+    $w: 50px;
+    $h: 30px;
+    width: $w;
+    height: $h;
+    transform: translateZ(calc(#{$w} / 2)) translatey(-230px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
+  }
+  .face-d-mirrored { /////////////////////////////////////////
+    $w: 15px;
+    width: $w;
+    height: 200px;
+    background-size: cover;
+    clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+    transform: translateZ(calc(#{$w} / 2 + 35px)) translatey(-200px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
+  }
+  .face-e-mirrored {
+    $w: 35px;
+    width: $w;
+    height: 200px;
+    transform: translateZ(calc(#{$w} / 2)) translatey(-200px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
+  }
+  .face-f-mirrored {
+    $w: 50px;
+    $h: 30px;
+    width: $w;
+    height: $h;
+    transform: translateZ(calc(#{$w} / 2)) translatey(-230px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
+  }
+  .face-g {
+    $w: 100px;
+    $h: 30px;
+    width: $w;
+    height: $h;
+    background-color: darken(rgb(231, 55, 55), 20%);
+    transform: translateZ(50px) translatey(-230px);
+  }
+  .face-h {
+    width: 100px;
+    height: 50px;
+    transform: translateZ(calc(75px - 50px)) translatey(calc(-25px - 230px)) rotatex(90deg);
+  }
+  .face-i {
+    $w: 35px;
+    width: 100px;
+    height: 200.56px;
+    background-color: black;
+    transform: translateZ(42px) translatey(-200px) translateX(calc(0)) rotatex(4deg);
+  }
+  .face-j {
+    $w: 100px;
+    $h: 15px;
+    background-color: black;
+    width: $w;
+    height: $h;
+    transform: translateZ(45px) translatey(-210px) rotatex(-90deg);
+  }
+
+
+  .button {
+    $w: 30px;
+    width: $w;
+    height: $w;
+    background-color: transparent;
+    transform: translateZ(80px) translateX(calc(50px - 20px)) translateY(-34px) rotatex(90deg);
+    transition: transform .2s ease;
+    transform-style: preserve-3d;
+    $h: 20px;
+    position: relative;
+
+    .face-top {
+      position: absolute;
+      width: $w;
+      height: $w;
+      clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      background-color: rgba(aqua, .9);
+    }
+
+    $n: 8;
+    .side {
+      $deg: calc(360deg / #{$n} / 2);
+      $tan: math.tan(22.5deg);
+      position: absolute;
+      background-color: darken(aqua, 20%);
+      width: calc(#{$tan} * #{$w});
+      height: $h;
+    }
+    @for $i from 1 through $n + 1 {
+      .side:nth-child(#{$i}) {
+        transform: translatez(calc(-#{$h} / 2)) rotatex(-90deg) rotateY(calc(360deg / #{$n} * #{$i})) translatez(calc(#{$w} / 2));
+      }
+    }
+  }
+
+  .button:hover {
+    transform: translateZ(80px) translateX(calc(50px - 20px)) translateY(-24px) rotatex(90deg);
+    cursor: pointer;
+  }
+
+}

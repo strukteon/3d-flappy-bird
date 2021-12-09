@@ -1,0 +1,69 @@
+.game-scene {
+  position: relative;
+  width: 90px;
+  height: 160px;
+  background-color: lightblue;
+  font-family: Roboto;
+  overflow: hidden;
+
+  > div {
+    position: absolute;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  &.paused .overlay {
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(black, .5);
+  }
+
+  .score {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 5px;
+  }
+
+  .player {
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    bottom: var(--pos-y);
+    background-image: url("../20211104_pvs_helix_4x4_rotweinfleck.png");
+    background-size: cover;
+    transform: rotate(var(--rot));
+  }
+
+  .pipes {
+    height: 100%;
+    bottom: var(--pos-y);
+  }
+
+  .pipes > div {
+    --space: 70px;
+    position: absolute;
+    left: var(--pos-x);
+    width: 20px;
+    height: calc(80px );
+    background-color: greenyellow;
+
+    &.top {
+      top: calc(var(--space) / -2);
+    }
+    &.bottom {
+      bottom: calc(var(--space) / -2);
+    }
+  }
+}

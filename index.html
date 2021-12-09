@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="sass/arcade.css">
+    <script src="game.js" defer></script>
+    <link rel="stylesheet" href="sass/game.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="closeup" style="--rot-y: -45deg; --zoom: 1">
+    <div class="scene">
+        <div class="arcade-machine">
+            <div class="face-a">A</div>
+            <div class="face-b">B</div>
+            <div class="face-b-mirrored">B</div>
+            <div class="face-c">C</div>
+            <div class="face-d">d</div>
+            <div class="face-e">e</div>
+            <div class="face-f">f</div>
+            <div class="face-d-mirrored">d</div>
+            <div class="face-e-mirrored">e</div>
+            <div class="face-f-mirrored">f</div>
+            <div class="face-g">g</div>
+            <div class="face-h">h</div>
+            <div class="face-j">j</div>
+            <div class="face-i">
+                <div class="game-scene paused">
+                    <div class="overlay">Press to start</div>
+                    <div class="score">0</div>
+                    <div class="pipes" style="--pos-y: 50px; --pos-x: -20px; --height: 45px">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </div>
+                    <div class="player" style="--pos-y: 65px; --rot: 20deg"></div>
+                </div>
+            </div>
+
+            <div class="button">
+                <div class="face-top"></div>
+                <div class="side"><!--0--></div>
+                <div class="side"><!--1--></div>
+                <div class="side"><!--2--></div>
+                <div class="side"><!--3--></div>
+                <div class="side"><!--4--></div>
+                <div class="side"><!--5--></div>
+                <div class="side"><!--6--></div>
+                <div class="side"><!--7--></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="btns">
+        <button id="left">&lt;</button>
+        <button id="right">&gt;</button>
+    </div>
+    <div class="btns">
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+    </div>
+</body>
+</html>
