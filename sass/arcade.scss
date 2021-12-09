@@ -5,6 +5,25 @@
     margin: 0;
     padding: 0;
   }
+  .face-shadow {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(black, .6);
+    filter: blur(10px);
+    transform: translateZ(50px) translateX(-50px) rotateX(90deg);
+  }
+  .face-floor {
+    width: 100px;
+    height: 100px;
+    transform: translateZ(50px) translateY(50px) rotateX(90deg);
+  }
+  .face-back {
+    width: 100px;
+    $h: 330px;
+    height: $h;
+    transform: translateY(-230px) rotateY(180deg);
+  }
   .face-a {
     width: 100px;
     height: 100px;
@@ -96,7 +115,7 @@
     background-color: black;
     width: $w;
     height: $h;
-    transform: translateZ(45px) translatey(-210px) rotatex(-90deg);
+    transform: translateZ(43px) translatey(-207px) rotatex(-90deg);
   }
 
 
@@ -110,6 +129,7 @@
     transform-style: preserve-3d;
     $h: 20px;
     position: relative;
+    cursor: pointer;
 
     .face-top {
       position: absolute;
@@ -135,9 +155,8 @@
     }
   }
 
-  .button:hover {
+  .button:active {
     transform: translateZ(80px) translateX(calc(50px - 20px)) translateY(-24px) rotatex(90deg);
-    cursor: pointer;
   }
 
 }
