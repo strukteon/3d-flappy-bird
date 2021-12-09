@@ -8,6 +8,7 @@ body {
 
 
 .scene {
+    margin-top: 350px;
     width: 200px;
     height: 200px;
     perspective: 600px;

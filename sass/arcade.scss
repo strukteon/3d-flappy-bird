@@ -13,29 +13,32 @@
     transform: translateX(var(--light_x)) translateY(var(--light_y)) translateZ(var(--light_z));
   }
   .face-a {
-    filter: brightness(var(--face-a-brightness));
+    filter: brightness(var(--brightness-face-a));
     width: 100px;
     height: 100px;
     transform: translateZ(100px);
   }
   .face-b {
-    filter: brightness(var(--face-b-brightness));
+    filter: brightness(var(--brightness-face-b));
     width: 100px;
     height: 100px;
     transform: translateZ(50px) translateX(50px) rotateY(90deg);
     // background-color: darken(rgb(231, 55, 55), 10%);
   }
   .face-b-mirrored {
+    filter: brightness(var(--brightness-face-b-mirrored));
     width: 100px;
     height: 100px;
     transform: translateZ(50px) translateX(calc(50px - 100px)) rotateY(-90deg);
   }
   .face-c {
+    filter: brightness(var(--brightness-face-c));
     width: 100px;
     height: 50px;
     transform: translateZ(75px) translatey(-25px) rotatex(90deg);
   }
   .face-d {
+    filter: brightness(var(--brightness-face-d));
     $w: 15px;
     width: $w;
     height: 200px;
@@ -45,6 +48,7 @@
     transform: translateZ(calc(#{$w} / 2 + 35px)) translatey(-200px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
   }
   .face-e {
+    filter: brightness(var(--brightness-face-e));
     $w: 35px;
     width: $w;
     height: 200px;
@@ -52,6 +56,7 @@
     transform: translateZ(calc(#{$w} / 2)) translatey(-200px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
   }
   .face-f {
+    filter: brightness(var(--brightness-face-f));
     $w: 50px;
     $h: 30px;
     width: $w;
@@ -59,6 +64,7 @@
     transform: translateZ(calc(#{$w} / 2)) translatey(-230px) translateX(calc(100px - #{$w} / 2)) rotatey(90deg);
   }
   .face-d-mirrored { /////////////////////////////////////////
+    filter: brightness(var(--brightness-face-d-mirrored));
     $w: 15px;
     width: $w;
     height: 200px;
@@ -67,12 +73,14 @@
     transform: translateZ(calc(#{$w} / 2 + 35px)) translatey(-200px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
   }
   .face-e-mirrored {
+    filter: brightness(var(--brightness-face-e-mirrored));
     $w: 35px;
     width: $w;
     height: 200px;
     transform: translateZ(calc(#{$w} / 2)) translatey(-200px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
   }
   .face-f-mirrored {
+    filter: brightness(var(--brightness-face-f-mirrored));
     $w: 50px;
     $h: 30px;
     width: $w;
@@ -80,6 +88,7 @@
     transform: translateZ(calc(#{$w} / 2)) translatey(-230px) translateX(calc(100px - #{$w} / 2 - 100px)) rotatey(-90deg);
   }
   .face-g {
+    filter: brightness(var(--brightness-face-g));
     $w: 100px;
     $h: 30px;
     width: $w;
@@ -88,11 +97,13 @@
     transform: translateZ(50px) translatey(-230px);
   }
   .face-h {
+    filter: brightness(var(--brightness-face-h));
     width: 100px;
     height: 50px;
     transform: translateZ(calc(75px - 50px)) translatey(calc(-25px - 230px)) rotatex(90deg);
   }
   .face-i {
+    filter: brightness(var(--brightness-face-i));
     $w: 35px;
     width: 100px;
     height: 200.56px;
@@ -100,6 +111,7 @@
     transform: translateZ(42px) translatey(-200px) translateX(calc(0)) rotatex(4deg);
   }
   .face-j {
+    filter: brightness(var(--brightness-face-j));
     $w: 100px;
     $h: 15px;
     background-color: black;
@@ -121,6 +133,7 @@
     position: relative;
 
     .face-top {
+      filter: brightness(var(--brightness-face-top));
       position: absolute;
       width: $w;
       height: $w;
@@ -139,6 +152,7 @@
     }
     @for $i from 1 through $n + 1 {
       .side:nth-child(#{$i}) {
+        filter: brightness(var(--brightness-side-#{$i}));
         transform: translatez(calc(-#{$h} / 2)) rotatex(-90deg) rotateY(calc(360deg / #{$n} * #{$i})) translatez(calc(#{$w} / 2));
       }
     }
