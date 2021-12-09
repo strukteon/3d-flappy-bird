@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="sass/arcade.css">
     <script src="game.js" defer></script>
     <link rel="stylesheet" href="sass/game.css">
+    <script src="shading.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body class="closeup" style="--rot-y: -45deg; --zoom: 1">
     <div class="scene">
         <div class="arcade-machine">
+            <div class="light">☀️</div>
             <div class="face-a">A</div>
             <div class="face-b">B</div>
             <div class="face-b-mirrored">B</div>
@@ -57,6 +59,7 @@
     <br>
     <br>
     <br>
+    <!-- <div style="margin-top: 50px;"></div> -->
     <div class="btns">
         <button id="left">&lt;</button>
         <button id="right">&gt;</button>
@@ -64,6 +67,11 @@
     <div class="btns">
         <button id="plus">+</button>
         <button id="minus">-</button>
+    </div>
+    <div class="btns">
+        <input type="range" id="light_x" name="light_x" min="-300" max="300"><label for="light_x">Light X</label><br>
+        <input type="range" id="light_y" name="light_y" min="-300" max="300"><label for="light_y">Light Y</label><br>
+        <input type="range" id="light_z" name="light_z" min="-300" max="300"><label for="light_z">Light Z</label><br>
     </div>
 </body>
 </html>
