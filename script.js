@@ -10,6 +10,11 @@ document.getElementById("right").onclick = () => {
     document.body.style.setProperty("--rot-y", `${rotY}deg`)
     console.log(rotY)
 }
+document.getElementById("rotate").oninput = (event) => {
+  rotY = event.target.value;
+  document.body.style.setProperty("--rot-y", `${rotY}deg`);
+  console.log(rotY);
+};
 
 document.getElementById("plus").onclick = () => {
      zoom -= steps * .01;
