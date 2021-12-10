@@ -60,11 +60,14 @@ const tiles = {
 }
 
 
-function makeShading(light_position) { // called in script.js
-  const light_direction = (new Vector(0, 0, 0)).sub(light_position).getNormalized(); // direction of sun light parallel to everything
+function makeShading(light_position, is_pointlight = false) { // called in script.js
+  let light_direction;
+  if(!is_pointlight) light_direction = (new Vector(0, 0, 0)).sub(light_position).getNormalized(); // direction of global sun light parallel to everything
 
   Object.entries(tiles)
     .map(([key, val]) => {
+      if(is_pointlight) light_direction = val.pos.sub(light_position).getNormalized(); // direction of point light
+
       // darkness: 1 = total darkness, 0 = medium, -1 = total brightness
       let darkness =
         val.normal

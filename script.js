@@ -29,12 +29,13 @@ document.getElementById("minus").onclick = () => {
 // shading stuff
 
 let light_position = new Vector(200, -100, 0);
+let is_pointlight = false;
 
 function updateShading(light_position) {
   document.body.style.setProperty("--light_x", `${light_position.x}px`);
   document.body.style.setProperty("--light_y", `${light_position.y}px`);
   document.body.style.setProperty("--light_z", `${light_position.z}px`);
-  makeShading(light_position);
+  makeShading(light_position, is_pointlight);
 }
 
 document.getElementById("light_x").oninput = (event) => {
@@ -52,8 +53,14 @@ document.getElementById("light_z").oninput = (event) => {
     updateShading(light_position);
 };
 
+document.getElementById("is_pointlight").onchange = (event) => {
+  is_pointlight = event.target.checked;
+  updateShading(light_position);
+};
+
 document.getElementById("light_x").value = light_position.x;
 document.getElementById("light_y").value = light_position.y;
 document.getElementById("light_z").value = light_position.z;
+document.getElementById("is_pointlight").checked = is_pointlight;
 
 updateShading(light_position);
