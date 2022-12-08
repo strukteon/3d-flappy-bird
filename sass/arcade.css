@@ -2,24 +2,6 @@
   margin: 0;
   padding: 0;
 }
-.arcade-machine .face-shadow {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: blur(10px);
-  transform: translateZ(50px) translateX(-50px) rotateX(90deg);
-}
-.arcade-machine .face-floor {
-  width: 100px;
-  height: 100px;
-  transform: translateZ(50px) translateY(50px) rotateX(90deg);
-}
-.arcade-machine .face-back {
-  width: 100px;
-  height: 330px;
-  transform: translateY(-230px) rotateY(180deg);
-}
 .arcade-machine .face-a {
   width: 100px;
   height: 100px;
@@ -98,7 +80,7 @@
   background-color: black;
   width: 100px;
   height: 15px;
-  transform: translateZ(43px) translatey(-207px) rotatex(-90deg);
+  transform: translateZ(45px) translatey(-210px) rotatex(-90deg);
 }
 .arcade-machine .button {
   width: 30px;
@@ -108,7 +90,6 @@
   transition: transform 0.2s ease;
   transform-style: preserve-3d;
   position: relative;
-  cursor: pointer;
 }
 .arcade-machine .button .face-top {
   position: absolute;
@@ -150,8 +131,9 @@
 .arcade-machine .button .side:nth-child(9) {
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 9)) translatez(calc(30px / 2));
 }
-.arcade-machine .button:active {
+.arcade-machine .button:hover {
   transform: translateZ(80px) translateX(30px) translateY(-24px) rotatex(90deg);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=arcade.css.map */
