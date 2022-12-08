@@ -2,47 +2,65 @@
   margin: 0;
   padding: 0;
 }
+.arcade-machine .light {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+  transform: translateX(var(--light_x)) translateY(var(--light_y)) translateZ(var(--light_z));
+}
+.arcade-machine .face-back {
+  width: 100px;
+  height: 330px;
+  transform: translateY(-230px) rotateY(180deg);
+  filter: brightness(var(--brightness-face-back));
+}
 .arcade-machine .face-a {
+  filter: brightness(var(--brightness-face-a));
   width: 100px;
   height: 100px;
   transform: translateZ(100px);
 }
 .arcade-machine .face-b {
+  filter: brightness(var(--brightness-face-b));
   width: 100px;
   height: 100px;
   transform: translateZ(50px) translateX(50px) rotateY(90deg);
-  background-color: #d21919;
 }
 .arcade-machine .face-b-mirrored {
+  filter: brightness(var(--brightness-face-b-mirrored));
   width: 100px;
   height: 100px;
   transform: translateZ(50px) translateX(-50px) rotateY(-90deg);
 }
 .arcade-machine .face-c {
+  filter: brightness(var(--brightness-face-c));
   width: 100px;
   height: 50px;
   transform: translateZ(75px) translatey(-25px) rotatex(90deg);
 }
 .arcade-machine .face-d {
+  filter: brightness(var(--brightness-face-d));
   width: 15px;
   height: 200px;
   background-size: cover;
   clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-  background-color: #d21919;
   transform: translateZ(calc(15px / 2 + 35px)) translatey(-200px) translateX(calc(100px - 15px / 2)) rotatey(90deg);
 }
 .arcade-machine .face-e {
+  filter: brightness(var(--brightness-face-e));
   width: 35px;
   height: 200px;
-  background-color: #d21919;
   transform: translateZ(calc(35px / 2)) translatey(-200px) translateX(calc(100px - 35px / 2)) rotatey(90deg);
 }
 .arcade-machine .face-f {
+  filter: brightness(var(--brightness-face-f));
   width: 50px;
   height: 30px;
   transform: translateZ(calc(50px / 2)) translatey(-230px) translateX(calc(100px - 50px / 2)) rotatey(90deg);
 }
 .arcade-machine .face-d-mirrored {
+  filter: brightness(var(--brightness-face-d-mirrored));
   width: 15px;
   height: 200px;
   background-size: cover;
@@ -50,37 +68,42 @@
   transform: translateZ(calc(15px / 2 + 35px)) translatey(-200px) translateX(calc(100px - 15px / 2 - 100px)) rotatey(-90deg);
 }
 .arcade-machine .face-e-mirrored {
+  filter: brightness(var(--brightness-face-e-mirrored));
   width: 35px;
   height: 200px;
   transform: translateZ(calc(35px / 2)) translatey(-200px) translateX(calc(100px - 35px / 2 - 100px)) rotatey(-90deg);
 }
 .arcade-machine .face-f-mirrored {
+  filter: brightness(var(--brightness-face-f-mirrored));
   width: 50px;
   height: 30px;
   transform: translateZ(calc(50px / 2)) translatey(-230px) translateX(calc(100px - 50px / 2 - 100px)) rotatey(-90deg);
 }
 .arcade-machine .face-g {
+  filter: brightness(var(--brightness-face-g));
   width: 100px;
   height: 30px;
   background-color: #a41414;
   transform: translateZ(50px) translatey(-230px);
 }
 .arcade-machine .face-h {
+  filter: brightness(var(--brightness-face-h));
   width: 100px;
   height: 50px;
   transform: translateZ(25px) translatey(-255px) rotatex(90deg);
 }
 .arcade-machine .face-i {
+  filter: brightness(var(--brightness-face-i));
   width: 100px;
   height: 200.56px;
   background-color: black;
   transform: translateZ(42px) translatey(-200px) translateX(0) rotatex(4deg);
 }
 .arcade-machine .face-j {
-  background-color: black;
+  filter: brightness(var(--brightness-face-j));
   width: 100px;
   height: 15px;
-  transform: translateZ(45px) translatey(-210px) rotatex(-90deg);
+  transform: translateZ(43px) translatey(-207px) rotatex(-90deg);
 }
 .arcade-machine .button {
   width: 30px;
@@ -92,6 +115,7 @@
   position: relative;
 }
 .arcade-machine .button .face-top {
+  filter: brightness(var(--brightness-face-top));
   position: absolute;
   width: 30px;
   height: 30px;
@@ -105,30 +129,39 @@
   height: 20px;
 }
 .arcade-machine .button .side:nth-child(1) {
+  filter: brightness(var(--brightness-side-1));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 1)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(2) {
+  filter: brightness(var(--brightness-side-2));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 2)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(3) {
+  filter: brightness(var(--brightness-side-3));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 3)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(4) {
+  filter: brightness(var(--brightness-side-4));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 4)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(5) {
+  filter: brightness(var(--brightness-side-5));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 5)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(6) {
+  filter: brightness(var(--brightness-side-6));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 6)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(7) {
+  filter: brightness(var(--brightness-side-7));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 7)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(8) {
+  filter: brightness(var(--brightness-side-8));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 8)) translatez(calc(30px / 2));
 }
 .arcade-machine .button .side:nth-child(9) {
+  filter: brightness(var(--brightness-side-9));
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 9)) translatez(calc(30px / 2));
 }
 .arcade-machine .button:hover {

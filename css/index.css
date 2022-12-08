@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+@font-face {
+    font-family: "Upheaval";
+    src: url("../assets/upheavtt.ttf");
+}
+
+.scene-wrapper {
+    width: 450px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid white;
+    position: relative;
+    border-radius: 2rem;
+}
+
+.scene-wrapper .buttons {
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scene-wrapper .buttons button {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    font-family: "Upheaval", sans-serif;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+}
+.scene-wrapper .buttons button:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.scene {
+    margin-top: 590px;
+    width: 100px;
+    height: 330px;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) scale(1.5);
+}
+
+.arcade-machine {
+    transform: translateZ(calc(-100px * var(--zoom))) rotateY(var(--rot-y));
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50px 0px 50px;
+}
+
+.arcade-machine > div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    background-color: rgb(231, 55, 55);
+}
+
+.bottom .face-front  { transform: translateZ(100px); }
+.bottom .face-left  { transform: rotateY( 90deg) translateZ(100px); }
+.bottom .face-right   { transform: rotateY(-90deg) translateZ(100px); }
+
+
+.face-i img {
+    width: 90px;
+    height: 160px
+}
+
+#canvas {
+    width: 300px;
+    height: auto;
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+}
+
+h1 {
+    color: black;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    font-family: "Upheaval", sans-serif;
+    letter-spacing: .1rem;
+}
+
+.debug-menu {
+    margin-top: 3rem;
+    color: white
+}
+
+#show-dbg-menu {
+    margin: .5rem;
+    padding: .75rem;
+    color: black;
+    text-shadow: -.5px -.5px 0 #fff, .5px -.5px 0 #fff, -.5px .5px 0 #fff, .5px .5px 0 #fff;
+    font-family: "Upheaval", sans-serif;
+    letter-spacing: .1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+}
+#show-dbg-menu:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
