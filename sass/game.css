@@ -17,8 +17,10 @@
   height: 100%;
   width: 100%;
   color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  letter-spacing: 0.1rem;
+  font-family: "Upheaval", sans-serif;
   display: flex;
   text-align: center;
   align-items: center;
@@ -29,15 +31,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Upheaval", sans-serif;
   z-index: 1;
   top: 5px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  letter-spacing: 0.1rem;
 }
 .game-scene .player {
   width: 20px;
   height: 20px;
   left: 10px;
   bottom: var(--pos-y);
-  background-image: url("../20211104_pvs_helix_4x4_rotweinfleck.png");
+  background-image: url("../assets/CSS3_logo.png");
+  background-color: #2465f1;
   background-size: cover;
   transform: rotate(var(--rot));
 }

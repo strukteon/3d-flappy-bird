@@ -33,6 +33,7 @@ function toRad(degree) {
 
 // positions and normal direction vectors of tiles:
 const tiles = {
+    'face-back':           { pos: new Vector(-230, 0, 0), normal: new Vector(0, 0, -1) },
     'face-a':           { pos: new Vector(0, 0, 100), normal: new Vector(0, 0, 1) },
     'face-b':           { pos: new Vector(50, 0, 50), normal: new Vector(1, 0, 0) },
     'face-b-mirrored':  { pos: new Vector(-50, 50, 50), normal: new Vector(-1, 0, 0) },

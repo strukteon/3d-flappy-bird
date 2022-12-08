@@ -1,19 +1,18 @@
-let rotY = -45;
+let rotY = -25;
 let zoom = 1;
 let steps = 10;
-document.getElementById("left").onclick = () => {
+document.body.style.setProperty("--rot-y", `${rotY}deg`)
+document.getElementById("btn-rot-left").onclick = () => {
     rotY -= steps;
     document.body.style.setProperty("--rot-y", `${rotY}deg`)
 }
-document.getElementById("right").onclick = () => {
+document.getElementById("btn-rot-right").onclick = () => {
     rotY += steps;
     document.body.style.setProperty("--rot-y", `${rotY}deg`)
-    console.log(rotY)
 }
 document.getElementById("rotate").oninput = (event) => {
   rotY = event.target.value;
   document.body.style.setProperty("--rot-y", `${rotY}deg`);
-  console.log(rotY);
 };
 
 document.getElementById("plus").onclick = () => {
@@ -23,7 +22,14 @@ document.getElementById("plus").onclick = () => {
 document.getElementById("minus").onclick = () => {
     zoom += steps * .01;
     document.body.style.setProperty("--zoom", `${zoom}`)
-    console.log(rotY)
+}
+
+let debugMenuVisible = false;
+let btnToggleDbgMenu = document.getElementById("show-dbg-menu");
+btnToggleDbgMenu.onclick = () => {
+    debugMenuVisible = ! debugMenuVisible;
+    btnToggleDbgMenu.innerText = (debugMenuVisible ? "Hide" : "Show") + " Debug Menu";
+    document.querySelector(".debug-menu").style.display = debugMenuVisible ? null : "none";
 }
 
 // shading stuff

@@ -9,6 +9,12 @@
   background-color: yellow;
   transform: translateX(var(--light_x)) translateY(var(--light_y)) translateZ(var(--light_z));
 }
+.arcade-machine .face-back {
+  width: 100px;
+  height: 330px;
+  transform: translateY(-230px) rotateY(180deg);
+  filter: brightness(var(--brightness-face-back));
+}
 .arcade-machine .face-a {
   filter: brightness(var(--brightness-face-a));
   width: 100px;
@@ -39,14 +45,12 @@
   height: 200px;
   background-size: cover;
   clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-  background-color: #d21919;
   transform: translateZ(calc(15px / 2 + 35px)) translatey(-200px) translateX(calc(100px - 15px / 2)) rotatey(90deg);
 }
 .arcade-machine .face-e {
   filter: brightness(var(--brightness-face-e));
   width: 35px;
   height: 200px;
-  background-color: #d21919;
   transform: translateZ(calc(35px / 2)) translatey(-200px) translateX(calc(100px - 35px / 2)) rotatey(90deg);
 }
 .arcade-machine .face-f {
@@ -97,10 +101,9 @@
 }
 .arcade-machine .face-j {
   filter: brightness(var(--brightness-face-j));
-  background-color: black;
   width: 100px;
   height: 15px;
-  transform: translateZ(45px) translatey(-210px) rotatex(-90deg);
+  transform: translateZ(43px) translatey(-207px) rotatex(-90deg);
 }
 .arcade-machine .button {
   width: 30px;
