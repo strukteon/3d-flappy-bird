@@ -165,6 +165,10 @@
   transform: translatez(calc(-20px / 2)) rotatex(-90deg) rotateY(calc(360deg / 8 * 9)) translatez(calc(30px / 2));
 }
 .arcade-machine .button:hover {
+  transform: translateZ(80px) translateX(30px) translateY(-28px) rotatex(90deg);
+  cursor: pointer;
+}
+.arcade-machine .button.pressed {
   transform: translateZ(80px) translateX(30px) translateY(-24px) rotatex(90deg);
   cursor: pointer;
 }

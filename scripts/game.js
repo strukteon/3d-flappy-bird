@@ -1,5 +1,4 @@
 (() => {
-    document.getElementsByClassName("button")[0].onclick = click;
 
     const elems = {
         gameScene: document.getElementsByClassName("game-scene")[0],
@@ -9,9 +8,11 @@
         pipes: document.getElementsByClassName("pipes")[0],
         bottomPipe: document.getElementsByClassName("bottom")[0],
         topPipe: document.getElementsByClassName("top")[0],
+        button: document.getElementsByClassName("button")[0],
     }
 
     let gameRunning = false;
+    let blockInteraction = false;
     let score = 0;
 
     let playerGravity = -.03;
@@ -23,6 +24,24 @@
     let pipesX = -20;
     let pipesSpeedX = -.5;
     let pipesPassedPlayer = false;
+
+
+
+    
+    elems.button.onmousedown = () => click() || onpress();
+    elems.button.onmouseup = onrelease;
+    document.body.onkeydown = e => e.key == " " ? e.preventDefault() || click() || onpress() : null;
+    document.body.onkeyup = e => e.key == " " ? onrelease() : null;
+
+    function onpress() {
+        elems.button.classList.add("pressed");
+        blockInteraction = true;
+    }
+
+    function onrelease() {
+        elems.button.classList.remove("pressed");
+        blockInteraction = false;
+    }
 
     let recentTimestamp;
     function draw(timestamp) {
@@ -60,6 +79,8 @@
             gameRunning = false
             elems.overlay.innerText = "Game Over";
             elems.gameScene.classList.add("paused");
+            blockInteraction = true;
+            setTimeout(() => blockInteraction = false, 200);
         }
 
         recentTimestamp = timestamp;
@@ -68,6 +89,8 @@
     window.requestAnimationFrame(draw)
 
     function click() {
+        if (blockInteraction) return;
+
         if (!gameRunning) {
             gameRunning = true;
             elems.gameScene.classList.remove("paused");

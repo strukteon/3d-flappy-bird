@@ -162,8 +162,10 @@
   }
 
   .button:hover {
-    transform: translateZ(80px) translateX(calc(50px - 20px)) translateY(-24px) rotatex(90deg);
+    transform: translateZ(80px) translateX(calc(50px - 20px)) translateY(-28px) rotatex(90deg);
     cursor: pointer;
   }
-
+  .button.pressed {
+    transform: translateZ(80px) translateX(30px) translateY(-24px) rotatex(90deg);
+  }
 }
